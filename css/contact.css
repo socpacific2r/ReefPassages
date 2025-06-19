@@ -1,0 +1,201 @@
+/*
+    Author : Nathan Lafont
+    Date : 04.23.2025
+    Description : contact form style sheet
+    Html codestitch Source : https://www.codestitch.app/app?page=1
+*/
+
+
+/*-- -------------------------- -->
+<---          Contact           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #contact {
+      padding: var(--sectionPadding);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+    #contact .cs-container {
+      width: 100%;
+      /* changes to 1024 on desktop */
+      max-width: 44rem;
+      margin: auto;
+      background-color: #fff;
+      display: flex;
+      /* flex-direction: column; */
+      justify-content: center;
+      align-items: stretch;
+      /* 48px - 64px */
+      gap: clamp(3rem, 5vw, 4rem);
+    }
+    #contact .cs-content {
+      /* set text align to center if content needs to be centrally aligned */
+      text-align: left;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* aligns content to the left, set to center to centrally align */
+      align-items: flex-start;
+    }
+    #contact .cs-form-group {
+      /* set text align to left if content needs to be left aligned */
+      text-align: center;
+      width: 100%;
+      /* resets to 0 at tablet */
+      margin: auto;
+      /* prevents padding and border from affecting height and width */
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+    }
+    #contact .cs-title {
+      margin: 0 0 1.5rem;
+    }
+    #contact .cs-form {
+      width: 100%;
+      /* prevents flexbox from affecting height and width */
+      box-sizing: border-box;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+    #contact .cs-label {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.2em;
+      color: var(--headerColor);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      grid-column: span 12;
+      gap: 0.5rem;
+    }
+    #contact .cs-input {
+      font-size: 1rem;
+      width: 100%;
+      /* 46px - 56px */
+      height: clamp(2.875rem, 4.5vw, 3.5rem);
+      /* prevents padding from adding to height and width */
+      box-sizing: border-box;
+      padding: 0;
+      padding-left: 1.5rem;
+      background-color: #f7f7f7;
+      color: var(--headerColor);
+      border: none;
+    }
+    #contact .cs-input::placeholder {
+      color: var(--bodyTextColor);
+    }
+    #contact .cs-textarea {
+      font-family: inherit;
+      min-height: 7.5rem;
+      padding-top: 1.5rem;
+    }
+    #contact .cs-button-solid {
+      font-size: 1rem;
+      font-weight: 700;
+      /* 46px - 56px */
+      line-height: clamp(2.875em, 5.5vw, 3.5em);
+      text-align: center;
+      text-decoration: none;
+      min-width: 9.375rem;
+      margin: 0;
+      /* prevents padding from adding to the width */
+      box-sizing: border-box;
+      padding: 0 1.5rem;
+      background-color: var(--primary);
+      overflow: hidden;
+      color: #1a1a1a;
+      border: none;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      transition: color 0.3s;
+    }
+    #contact .cs-button-solid:before {
+      content: "";
+      width: 0%;
+      height: 100%;
+      background: #000;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: width 0.3s;
+    }
+    #contact .cs-button-solid:hover {
+      color: #fff;
+    }
+    #contact .cs-button-solid:hover:before {
+      width: 100%;
+    }
+    #contact .cs-submit {
+      margin: 1rem 0 0;
+      color: var(--bodyTextColorWhite);
+      grid-column: span 12;
+      justify-self: flex-start;
+    }
+    #contact .cs-submit:hover {
+      cursor: pointer;
+    }
+    #contact .cs-info-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    #contact .cs-detail {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.2em;
+      color: var(--bodyTextColor);
+      display: block;
+    }
+    }
+    
+    /* Tablet - 768px */
+    @media only screen and (min-width: 48rem) {
+    #contact .cs-container {
+      flex-direction: row;
+      align-items: center;
+    }
+    #contact .cs-form-group {
+      flex: 1;
+    }
+    #contact .cs-info-group {
+      flex: 1;
+    }
+    }
+    /* Desktop - 1024px */
+    @media only screen and (min-width: 64rem) {
+    #contact .cs-container {
+      width: 65%;
+      max-width: 64rem;
+      margin: 0 auto 0 0;
+      padding: 2.5rem 1.5rem;
+    }
+    }
+    /* Large Desktop - 1300px */
+    @media only screen and (min-width: 81.25rem) {
+    #contact .cs-label:nth-of-type(2),
+    #contact .cs-label:nth-of-type(3) {
+      grid-column: span 6;
+    }
+    }
+    /* Largest Desktop - 1920px */
+    @media only screen and (min-width: 120rem) {
+    #contact {
+      padding-top: 7vw;
+      padding-bottom: 9vw;
+    }
+    #contact .cs-container {
+      margin: 0 auto;
+      transform: translateX(-22rem);
+    }
+    }

@@ -1,0 +1,198 @@
+/*
+    Author : Nathan Lafont
+    Date : 04.23.2025
+    Description : main style sheet
+    Html codestitch Source : https://www.codestitch.app/app?page=1
+*/
+
+:root {
+    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+    --primary: #397986;
+    --primaryLight: #a7d2dd;
+    --secondary: #191d34;
+    --headerColor: #191d34;
+    --bodyTextColor: #4e4b66;
+    --bodyTextColorWhite: #fafbfc;
+    /* 13px - 16px */
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    /* 31px - 49px */
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --bodyFontSize: 1rem;
+    /* 60px - 100px top and bottom */
+    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  .cs-topper {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: .1em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom:.25rem;
+    display: block;
+    text-align: center;
+  }
+  
+  .header-img {
+    text-align: center;
+  }
+  
+  .cs-title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
+  }
+  
+  .cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 40.625rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+  }
+    
+  
+  /** -------------------- NAV -------------------- **/
+  
+  nav {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 0;
+    background-color: var(--headerColor);
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    justify-content: center;
+    display: flex;
+    margin : 0 auto;  
+  }
+  
+  nav ul li {
+    width: 20%;
+    text-align: center;
+    position: relative;
+  }
+  
+  nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  nav a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-bottom: 4px solid transparent;
+    padding: 10px 0px;
+  }
+  
+  nav a:hover {
+    color: #4da0b0;
+    border-bottom: 4px solid var(--primary);
+  }
+
+
+  .clickable-image {
+    display: inline-block;
+    width: 100%;
+    cursor: zoom-in; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .clickable-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  #credits {
+    margin: 0 auto;
+    width:100%; 
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-right: 15%;
+    padding-left: 15%;
+    border-top: solid 0.5px #191d34;
+  }
+  
+  #credits div {
+    flex-grow: 1;
+  }
+  
+  #credits::after{
+    content: "";
+    display: block;
+    flex-grow: auto;
+  }
+  
+  #credits img {  
+    max-height: 70px;
+    width: auto;
+  }
+
+  #footer {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: var(--headerColor);
+    top: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display:flex;
+  }
+
+  #footer .left-column{
+    width : 25%; 
+    justify-content: center;
+    display:flex;
+    color: var(--bodyTextColorWhite);
+    font-size: small;
+  }
+
+  #footer .right-column{
+    width: 75%;
+    left: 0;
+    gap: 30px;
+    padding-right: 150px;
+    justify-content: right;
+    display: flex;
+  }
+
+  #footer .right-column a{
+    color: var(--bodyTextColorWhite);
+    text-decoration: none;
+    font-size: small;
+  }
+
+  #footer .right-column a:hover{
+    color: rgb(191, 199, 207);
+  }
+

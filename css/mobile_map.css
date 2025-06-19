@@ -1,0 +1,89 @@
+/*
+    Author : Nathan Lafont
+    Date : 04.23.2025
+    Description : mobile standalone webmap style sheet
+    Html codestitch Source : https://www.codestitch.app/app?page=1
+*/
+
+
+#map {
+    position: absolute;
+    width: 100%;
+    height: 90vh;;
+    z-index : 1;
+}
+
+
+.fixed-panel {
+  top: 100px;
+  left: 0px;
+  bottom: 230px;
+  position: absolute;
+
+  font-size: 1rem;
+
+  max-height : 70vh;
+  max-width : 25rem;
+  height : 70vh;
+  margin-top : 1.25rem;
+  padding: 1.25rem;
+
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  overflow-y: scroll;
+  overflow-x: scroll;
+
+  /* transition settings */
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none; /* prevent clicks when hidden */
+}
+
+.media-fixed-panel {
+  bottom: 2.7rem;
+  right: 0px;
+  position: absolute;
+
+  font-size: 1rem;
+
+  max-height : 25rem;
+  width:25rem;
+  max-width : 25rem;
+  margin-top : 0rem;
+  padding: 0rem;
+
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  overflow-y: scroll;
+  overflow-x: scroll;
+
+  /* transition settings */
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none; /* prevent clicks when hidden */
+}
+  
+.fixed-panel.visible, .media-fixed-panel.visible {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.panel-closer {
+  position: sticky;
+  top:.5rem;
+  right:.5rem;
+}
+
+#zoom-select {
+    position:absolute;
+    top : 1.5%;
+    right : 45%;
+    z-index: 50;
+}

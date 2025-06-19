@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 
+    Authors : Nathan Lafont & Samuel Martin
+    Date : 04.23.2025
+    Description : main html file
+    Html codestitch Source : https://www.codestitch.app/app?page=1
+-->
+
+    <head>
+
+        <title> Webmap - SOCPacific2R </title>
+        <link rel="Shortcut icon" href="media/icons/favicon.png">
+
+        <!-- Librairie OpenLayers -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css" />
+        <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.15.1/build/ol.js"></script>
+
+        <!-- Extension Géoportail pour OpenLayers-->
+        <link rel="stylesheet" href="https://ignf.github.io/geoportal-sdk/latest/dist/2d/GpSDK2D.css" />
+        <!--lien vers le fichier autoconf en local-->
+        <script src="https://ignf.github.io/geoportal-sdk/latest/dist/2d/GpSDK2D.js">
+        </script>
+
+        <link rel="stylesheet" type="text/css" href="css/css.css"/>
+        <link rel="stylesheet" type="text/css" href="css/map.css"/>
+        <link rel="stylesheet" type="text/css" href="css/contact.css"/>
+
+    </head>
+
+    <body data-page="main-page">
+
+        <!-- ============================================ -->
+        <!--                   HEADER                     -->
+        <!-- ============================================ -->
+
+        <div class="header-img">
+            <img src="media/layout/socpacific1.webp" height="85px"/>
+        </div>
+
+
+        <!-- ============================================ -->
+        <!--                     NAV                      -->
+        <!-- ============================================ -->
+
+        <nav>
+            <ul>
+                <li><a href="#webmap">Webmap</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+
+        <section id="presentation">
+            
+        </section>
+
+        <!-- ============================================ -->
+        <!--                   WEBMAP                     -->
+        <!-- ============================================ -->
+
+        <section id="webmap">
+
+            <div class="cs-container">
+                
+                <div class="cs-content">
+                    <h2 class="cs-title">Reef passages in South Pacific Ocean</h2>
+                    <div class="cs-flex">
+                        <p class="cs-text">Reef passes are at the heart of the SocPacific2R project. Particularly in the South Pacific, the issues surrounding a pass are highly diverse, multiple, and complex; each pass plays a very different role in the eyes of the stakeholders and the flora and fauna it affects. To better understand these complex spaces, we attempted to identify and classify them.</p>
+                        <p class="cs-text">This classification work focuses primarily on the archipelagos of French Polynesia, Fiji, and New Caledonia.</p>
+                        <p class="cs-text">This exploratory work aims to establish a dialogue between stakeholders in these complex environments, as it is through discussion that we can best understand the role of each pass in the ecosystem, culture, and local economy.</p>
+                        <a href="https://socpacific.link/" class="cs-button-main" target="_blank">Read More about SOCPacific2R</a>
+                        <a href="./documents/2025-01_FLYER_SOCPacific2R_Flyer.pdf" class="cs-button-main" target="_blank">See project's flyer</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr style="width:40%; margin-top:30px;">
+
+            <div class="cs-container" style="padding-top:70px;">
+                <div class="cs-content" style="gap:100px;">
+
+                    <div class="cs-text">
+                        <h3 style="text-align: center;">A colaborative work</h3>
+                        <p>
+                            The goal of this project is to create a <strong>transdisciplinary dialogue</strong> around reef passages. In this initial work, 
+                            we identified those located on the islands of Viti Levu, Vanua Levu, Ovalau and Moturiki (<strong>Fiji</strong>), Grande-Terre 
+                            and the Loyalty Islands (<strong>New Caledonia</strong>), and Tahiti and Moorea (<strong>French Polynesia</strong>). To identify and characterize 
+                            these reef passages, we relied almost entirely on information available online (remote sensing, databases, atlases, 
+                            etc.). Reef passages are complex environmental features that are sometimes difficult to understand properly. 
+                            Indeed, we believe that cross-examining perspectives with those involved or users of the reef passages 
+                            is essential to properly describe and document them. 
+                        </p>
+                        <p>
+                            Through this interface, we invite you to collaborate by suggesting passages that may have escaped our remote 
+                            sensing or by sharing your knowledge or experience with us on a poorly or insufficiently documented reef passage.
+                        </p>
+                        <p>
+                            To do so, you will find a <a href="#contact">feedback form</a> at the bottom of the page allowing you to express an observation or suggestion.
+                        </p>
+                        <hr style="width:40%; margin-top:30px;">
+                        <p>
+                            Note that what we define as a reef passage is a discontinuity in a coral reef that is narrower than the reef elements surrounding it.
+                        </p>
+                        <hr style="width:40%; margin-top:30px;">
+                    </div>
+                    
+                    <div class="cs-text">
+                        
+                        <h3 style="text-align: center;">Reef passages attributes</h3>
+
+                        <p>
+                            This current version of the webmap gives access to several passage's attributes that
+                            mainly qualify its environment and morphology, such as : 
+                        </p>
+                        <ul>
+                            <li><strong>Minimal width</strong> of the reef passage;</li>
+                            <li>Its <strong>distance from shore</strong>;</li>
+                            <li>Its <strong>distance from the nearest village</strong>;</li>
+                            <li>...</li>
+                        </ul>
+                        <p> 
+                            We are currently working on additionnal indexes that could help to establish typology
+                            that is no exclusively relying on environmental, physical or morphological variables but also
+                            taking acount of the roles that the passage could have for local communities or ecosystems.
+                        </p>
+
+                        <a href="media/standalone/passages_attributes.jpg" target="_blank" style="display: inline-block;">
+                            <img src="media/standalone/passages_attributes.jpg" style="width: 100%; height: auto;" alt="Table of exploratory attributes" class="clickable-image">
+                        </a>
+
+                        <p style="font-size:small; font-style: italic; text-align:center" > Source : A Typologie for reef passages (Breckwoldt et al., 2022) - DOI : <a href = "https://doi.org/10.3389/fmars.2022.786125">https://doi.org/10.3389/fmars.2022.786125</a></p>
+
+                    </div>  
+
+                </div>
+
+
+
+                <a href="./html/mobile_map.html" class="cs-button-solid" id="mobile-func" target="_blank" style="margin-bottom:10px;">
+                    Open webmap in new tab
+                </a>
+
+                <button id="computer-func" class="cs-button-solid" onclick="fullScreenView()" style="margin-bottom:10px;">
+                    Full screen webmap
+                </button>
+
+                <!-- Add Webmap -->
+                <div class="cs-picture" id="cs-picture">
+
+                    <!-- Zoom to -->
+                    <select id="zoom-select">
+                        <option value="">-- Select location --</option>
+                        <option value="tahiti">French Polynesia</option>
+                        <option value="fiji">Fiji</option>
+                        <option value="newcaledonia">New-Caledonia</option>
+                    </select>
+
+                    <!-- Map -->
+                    <div id="map"></div>
+
+                    <!-- Create a pop up panel from webmap -->
+                    <div id="fixed-panel" class="fixed-panel">
+
+                        <!-- Panel closer button -->
+                        <button id="panel-closer" class="panel-closer">✖</button>
+                        
+                        <!-- Panel content -->
+                        <div id="panel-content"></div>
+
+                    </div>
+
+                    <!-- Create a pop up panel from feature -->
+                    <div id="media-fixed-panel" class="media-fixed-panel">
+                        <!-- Panel content -->
+                        <div id="media-panel-content"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="cs-text">
+                    You think that you have something interesting to share with us about a reef passage? like a specific role, value or even a specific nature?
+                    Then please head to the <a href="#contact">contact</a> section and write us an email.
+                </div>
+
+                <!-- <ul class="cs-card-group">
+                    <li class="cs-item">
+                        <picture class="cs-icon-picture">
+                            <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/tool.svg" decoding="async" alt="icon" width="40" height="40" aria-hidden="true">
+                        </picture>
+
+                        <div class="cs-text-group">
+                            <h3 class="cs-h3">Construction</h3>
+                            <p class="cs-item-text"></p>
+                        </div>
+                    </li>
+                </ul> -->
+
+            </div> 
+
+        </section>
+
+
+        <!-- ============================================ -->
+        <!--                   CONTACT                    -->
+        <!-- ============================================ -->
+
+        <section id="contact">
+            <div class="cs-container">
+
+                <!--Form-->
+
+                <div class="cs-form-group">
+
+                    <div class="cs-content">
+                        <span class="cs-topper">Get in Touch</span>
+                        <h2 class="cs-title">Contact us</h2>
+                    </div>
+
+                    <form class="cs-form" id="cs-form" name="Contact Form" method="post">
+                        <label class="cs-label">
+                            <a>Name <strong style="color:brown">*</strong></a>
+                            <input class="cs-input" required type="text" id="name" name="name" placeholder="First Name & Surname (or Pseudo)">
+                        </label>
+                        <label class="cs-label cs-email">
+                            <a>Email <strong style="color:brown">*</strong></a>
+                            <input class="cs-input" required type="email" id="email" name="email" placeholder="name@domain.com">
+                        </label>
+                        <label class="cs-label cs-phone">
+                            Phone
+                            <input class="cs-input" type="tel" id="phone" name="phone" placeholder="+1 (206) 987-6543">
+                        </label>
+                        <label class="cs-label">
+                            <a>Message <strong style="color:brown">*</strong></a>
+                            <textarea class="cs-input cs-textarea" required name="message" id="message" placeholder="Hello, I would like to report ..."></textarea>
+                        </label>
+                        <button class="cs-button-solid cs-submit" type="submit">Submit</button>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+                  
+        
+        <!-- ============================================ -->
+        <!--                   CREDITS                    -->
+        <!-- ============================================ -->
+
+        <div style="display: flex; justify-content: center;">
+            <img src="./media/layout/soc_poissons.jpg" style="max-width: 100%; height: auto;">
+        </div>
+
+        <section id="credits">
+
+            <div><img src="./media/layout/ird_logo.png" height="100"></div>
+            <div><img src="./media/layout/zmt_logo.png" height="100"></div>
+            <div><img src="./media/layout/usp_logo.svg" height="100"></div>
+            <div><img src="./media/layout/anr_projet.jpg" height="100"></div>
+            <div><img src="./media/layout/dfg_logo.jpg" height="100"></div>
+
+        </section>
+
+
+        <!-- ============================================ -->
+        <!--                   FOOTER                     -->
+        <!-- ============================================ -->
+
+        <section id="footer">
+            <div class="left-column">
+                © Copyright - SOCPacific2R
+            </div>
+            
+            <div class="right-column">
+                <a href="https://socpacific.link/credits-and-legal-notice/" target="_blank">Credits and legal notice</a>
+                <a href="https://socpacific.link/privacy-policy-2/" target="_blank">Private Policy</a>
+            </div>
+
+        </section>
+
+
+        <!-- ============================================ -->
+        <!--                    SCRIPTS                   -->
+        <!-- ============================================ -->
+
+        <script src="javascript/map.js"></script>
+
+        <!-- EmailJS SDK (GitHub Pages compatibility) -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <script>
+        // Initialise EmailJS
+        (function(){
+            emailjs.init("nnw-c60c9M2kg4_j0"); // Public key
+        })();
+
+        // Message maker and sender
+        document.getElementById("cs-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            emailjs.send("service_e90n6vg", "template_kf5tm98", {
+                from_name: document.getElementById("name").value,
+                from_email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                message: document.getElementById("message").value
+            }).then(
+                function(response) {
+                    alert("Message envoyé avec succès !");
+                    document.getElementById("cs-form").reset();
+                },
+                function(error) {
+                    alert("Échec de l'envoi du message. Merci de réessayer.");
+                    console.error("Erreur d'envoi :", error);
+                }
+            );
+        });
+        </script>
+
+    </body>
+</html>                     

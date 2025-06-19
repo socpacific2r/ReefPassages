@@ -1,0 +1,365 @@
+/*
+    Author : Nathan Lafont
+    Date : 04.23.2025
+    Description : webmap style sheet
+    Html codestitch Source : https://www.codestitch.app/app?page=1
+*/
+
+/*
+    TODO : 
+    - CLEAN BUTTON MANAGING STYLE
+    - COMMENT PROPERLY AND SECTION THE CODE
+    - ...
+*/
+
+/** -------------------- MAP AND PANEL -------------------- **/
+
+#map {
+  position: relative ;
+  width: 100%;
+  height: 600px;
+  z-index : 1;
+}
+
+#cs-picture:fullscreen #map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+}
+
+.fixed-panel {
+  top: 100px;
+  left: 0px;
+  bottom: 230px;
+  position: absolute;
+
+  font-size: 1rem;
+
+  max-height : 25rem;
+  max-width : 25rem;
+  height : 25rem;
+  margin-top : 1.25rem;
+  padding: 1.25rem;
+
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  overflow-y: scroll;
+  overflow-x: scroll;
+
+  /* transition settings */
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none; /* prevent clicks when hidden */
+}
+
+.media-fixed-panel {
+  bottom: 2.7rem;
+  right: 0px;
+  position: absolute;
+
+  font-size: 1rem;
+
+  max-height : 25rem;
+  width:25rem;
+  max-width : 25rem;
+  margin-top : 0rem;
+  padding: 0rem;
+
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  overflow-y: scroll;
+  overflow-x: scroll;
+
+  /* transition settings */
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none; /* prevent clicks when hidden */
+}
+  
+.fixed-panel.visible, .media-fixed-panel.visible {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.panel-closer {
+  position: sticky;
+  top:.5rem;
+  right:.5rem;
+}
+
+
+
+/** -------------------- WEBMAP SECTION -------------------- **/
+
+/* Mobile + */
+@media only screen and (min-width: 0rem) {
+  #webmap {
+    padding: var(--sectionPadding);
+    padding-top: clamp(10rem, 20vw, 12.5rem);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  #webmap .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  #webmap .cs-content {
+    text-align: center;
+    width: 100%;
+    margin-bottom: clamp(2.5rem, 5vw, 3.25rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  #webmap .cs-flex {
+    /* prevents flexbox from squishing it */
+    flex: none;
+  }
+  #webmap .cs-title {
+    /* 39px - 61px */
+    font-size: clamp(2.438rem, 5vw, 3.813rem);
+  }
+  #webmap .cs-text {
+    margin-bottom: 1.25rem;
+    text-align: justify;
+  }
+  #webmap .cs-text a{
+    color:var(--primary);
+    text-decoration: none;
+  }
+  #webmap .cs-text a:hover{
+    text-decoration: underline;
+  }
+  
+  #webmap .cs-button-main {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-align: center;
+    text-decoration: none;
+    min-width: 9.375rem;
+    margin: 0;
+    box-sizing: border-box;
+    /* 32px - 48px */
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--primary);
+    color: var(--bodyTextColorWhite);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+    transition: background-color 0.3s;
+  }
+
+  #webmap .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-align: center;
+    text-decoration: none;
+    min-width: 9.375rem;
+    margin: 0;
+    box-sizing: border-box;
+    /* 32px - 48px */
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--primary);
+    color: var(--bodyTextColorWhite);
+    /* display: inline-block; */
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+    transition: background-color 0.3s;
+  }
+  #mobile-func{
+    display: inline-block;
+  }
+  #computer-func{
+    display: none; 
+  }
+  #webmap .cs-button-solid:hover {
+    background-color: var(--secondary);
+    color: #fff;
+  }
+  #webmap .cs-button-main:hover {
+    background-color: var(--secondary);
+    color: #fff;
+  }
+  #webmap .cs-picture {
+    width: 100%;
+    margin-bottom: clamp(1rem, 2vw, 1.25rem);
+    display: block;
+    position: relative;
+  }
+  #webmap .cs-picture:fullscreen {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  #webmap .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+
+  #webmap .cs-item {
+    text-align: center;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    /* 24px - 32px */
+    padding: clamp(1.5rem, 3vw, 2rem);
+    background-color: #F7F7F7;
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: span 12;
+    position: relative;
+    z-index: 1;
+    transition: border-color 0.3s;
+  }
+  #webmap .cs-item:hover {
+    border-color: var(--primary);
+  }
+  #webmap .cs-item:hover .cs-h3 {
+    color: var(--primary);
+  }
+  #webmap .cs-icon-picture {
+    margin-bottom: 1.25rem;
+    perspective: 700px;
+    transform-style: preserve-3d;
+  }
+  #webmap .cs-icon {
+    width: 2.5rem;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+  }
+  #webmap .cs-h3 {
+    font-size: 1.25rem;
+    line-height: 1.5em;
+    text-align: inherit;
+    margin: 0;
+    margin-bottom: 0.75rem;
+    color: var(--headerColor);
+    transition: color 0.3s;
+  }
+  #webmap .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    text-align: inherit;
+    margin: 0;
+    color: var(--bodyTextColor);
+  }
+  #zoom-select {
+    position:absolute;
+    top : 1.5%;
+    right : 45%;
+    z-index: 50;
+  }
+  
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #webmap .cs-text {
+    font-size: 1.25rem;
+  }
+  #webmap .cs-item {
+    text-align: left;
+    margin: 0;
+    align-items: flex-start;
+    grid-column: span 6;
+  }
+  
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #webmap .cs-content {
+    display: flex;
+    flex-direction: column;
+  }
+  #webmap .cs-title {
+    max-width: 46.875rem;
+  }
+  #webmap .cs-item {
+    grid-column: span 3;
+  }
+  #mobile-func{
+    display: none;
+  }
+  #computer-func{
+    display: inline-block;
+  }
+}
+
+
+/* Large Desktop 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #webmap .cs-title {
+    margin: 0;
+  }
+  #webmap .cs-container {
+    flex-direction: column;
+  }
+  #webmap .cs-content {
+    text-align: left;
+    max-width: 80rem;
+    gap: 1.25rem;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #webmap .cs-flex {
+    width: 50%;
+    max-width: 39.375rem;
+  }
+}
+
+#map:fullscreen {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999;
+}
+
+#webmap .cs-picture:fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
