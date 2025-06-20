@@ -22,7 +22,7 @@
   }
   
   
-  profile_points <- read.csv("../../data/_data_for_transects/moorea_profile_points.csv")
+  profile_points <- read.csv("../../data/data_for_transects/moorea_profile_points.csv")
   # -> File name needs to be adapted to the profile point csv to compute.
   
   path_to_transects_repo <- "../../media/webmap/transects/"
@@ -36,7 +36,7 @@
     # Create graphics with ggplot for the current section
     p <- ggplot(subset_profile_points, aes(x = DIST, y = Z)) +
       geom_line(color = "blue") +
-      ggtitle(paste("Transect for reef passage n°", line)) +
+      ggtitle(paste("Transect for reef passage n°", line," - source : 'topo-bathymétrique' DEM from SHOM")) + # Change DEM name if necessary
       xlab("Distance from first point of the transect line (m)") +
       ylab("Depth (m)") +
       theme_bw() +
