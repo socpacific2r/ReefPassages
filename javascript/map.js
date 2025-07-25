@@ -395,7 +395,7 @@ function after_init_map(){
                         }
 
                         ${feature.get('Dist shore') 
-                            ? `<p>Distance from shore: <strong>${feature.get('Dist shore')}</strong> m</p>`
+                            ? `<p>Distance from shore: <strong>${Math.round(feature.get('Dist shore')*100.0)/100.0}</strong> m</p>`
                             : `<p>Distance from shore: <i>unknown</i>` 
                         }
                         
