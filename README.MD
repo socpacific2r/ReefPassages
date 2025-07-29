@@ -14,17 +14,6 @@ This website has been developed by the named authors. If you contribute to impro
 This document is meant for technical details about the website and webmap architectures. If you are seeking further information about SOCPacific2R or this webmap project, please head to [socpacific.link](https://socpacific.link/) or to this [project report](./documents/2025_LAFONT_MARTIN.pdf).
 
 
-## FOLDERS AND ARCHITECTURE
-
-> General notes
-
-
-|**C1** | **C2** | **C3** | **C4** | **C5** | **C6** |
-|:----------------------------|:--------------|:------------------|:------------------|:-----------|:------------| 
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-
-
 ## PAGES & FILES
 
 ### HTML & JAVA files
@@ -47,12 +36,24 @@ This document is meant for technical details about the website and webmap archit
 
 > This section covers the features, sections of code, or attributes that will most likely be modified or enriched by the contributions. 
 
-### Add a new image to a passage's media panel
-Save the image as a `.png` named by the passage's ID (e.g. "`230.png`") in `media/webmap/pictures`.
+---
 
-> Note that the code only support 1 image file per passage and the file must be `.png`
+### Add a new image to a passage's media panel
+Save the image as a `.jpg` named by the passage's ID (e.g. "`230.jpg`") in `media/webmap/pictures`.
+
+> Note : the code only support 1 image file per passage and the file must be `.jpg` (the code can be tweaked to support other type of image files).
+
+---
 
 ### Enrich a passage's description
-Open the corresponding `.geojson` file in QGIS or any other GIS software, head to the attribute table of the layer and edit the "DESCRIPTION" field. 
+Open the corresponding `.geojson` file in QGIS or any other GIS software, head to the attribute table of the layer and edit the "DESCRIPTION" field.
 
-![Image Link](./media/webmap/pictures/bonhome.jpg)
+> Note : a description written in html is properly read by the script. Therefore, links and images can be added like so : 
+
+> **Link** : "click this `<a href="https://socpacific.link/" target="_blank">link</a>`."
+
+> **Images** or **other files** : `<img src="../../media/webmap/pictures/medianame.ext"/>` or `<a href="path/or/url">click here</a>`.
+
+>/!\ Please, ensure that the whole description is inbetween `<p></p>` or `<a></a>` tags to avoid any bug in display.
+
+---

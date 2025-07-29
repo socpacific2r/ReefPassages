@@ -435,7 +435,7 @@ function after_init_map(){
                         <p style="text-align : center";>Additional media:</p>
 
                         <img 
-                        src="../media/webmap/pictures/${feature.get('ID')}.png"
+                        src="../media/webmap/pictures/${feature.get('ID')}.jpg"
                         alt="picture of passage n°432"
                         style="width: 100%; height: auto;"
                         onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<p style=text-align:center;><i>No additional media available yet.</i></p>');"
