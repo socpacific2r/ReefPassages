@@ -13,6 +13,31 @@ This website has been developed by the named authors. If you contribute to impro
 
 This document is meant for technical details about the website and webmap architectures. If you are seeking further information about SOCPacific2R or this webmap project, please head to [socpacific.link](https://socpacific.link/) or to this [project report](./documents/2025_LAFONT_MARTIN.pdf).
 
+## FOLDER ARCHITECTURE
+
+```
+├───css                         //-- css files
+├───data                        //-- data files (mainly GIS files)
+│   ├───admin                   //-- admin data (island contours, villages, etc.)
+│   │   ├───fiji
+│   │   ├───french_polynesia
+│   │   └───new_caledonia
+│   ├───data_for_transects      //-- GIS files from different steps of the transects calculation process.
+│   └───reef_passages           //-- Reef passages layers
+├───documents                   //-- Documentation files related to the project (eg. flyer, report, etc.)
+│   └───transects_r_script      //-- Script used to calculate transects
+├───html                        //-- HTML files out of index.html
+├───javascript                  //-- JS files
+└───media                       //-- Media
+    ├───icons                   //-- Map or page icons
+    ├───layout                  //-- Media used for the page's layout
+    ├───standalone              //-- Media that have interest on their own
+    └───webmap                  
+        ├───pictures            //-- Pics of passages (passID.jpg)
+        ├───style               //-- Features style
+        └───transects           //-- transects images (passID_transect.png)
+
+```
 
 ## PAGES & FILES
 
@@ -50,9 +75,15 @@ Open the corresponding `.geojson` file in QGIS or any other GIS software, head t
 
 > Note : a description written in html is properly read by the script. Therefore, links and images can be added like so : 
 
-> **Link** : "click this `<a href="https://socpacific.link/" target="_blank">link</a>`."
+> **Links** : 
+```html 
+<a href="https://socpacific.link/" target="_blank">link</a>
+```
 
-> **Images** or **other files** : `<img src="../../media/webmap/pictures/medianame.ext"/>` or `<a href="path/or/url">click here</a>`.
+> **Images** or **other files** : 
+```html
+<img src="../../media/webmap/pictures/medianame.ext"/>` or `<a href="path/or/url">click here</a>
+```
 
 >/!\ Please, ensure that the whole description is inbetween `<p></p>` or `<a></a>` tags to avoid any bug in display.
 
