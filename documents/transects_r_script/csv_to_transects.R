@@ -22,7 +22,7 @@
   }
   
   
-  profile_points <- read.csv("../../data/data_for_transects/moorea_profile_points.csv")
+  profile_points <- read.csv("../../data/data_for_transects/tahiti_profile_points.csv")
   # -> File name needs to be adapted to the profile point csv to compute.
   
   path_to_transects_repo <- "../../media/webmap/transects/"

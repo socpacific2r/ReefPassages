@@ -20,22 +20,31 @@ const white = [220, 220, 220, 1];
 // Allows to define device-based behaviour or symbology
 const page = document.body.dataset.page;
 var dotsize = 5;
+
 // Relative path to geojson files from main
 var urlfp = "data/reef_passages/french_polynesia.geojson";
-var urlf = "data/reef_passages/PassesFiji.geojson";
+var urlf = "data/reef_passages/fiji.geojson";
 var urlnc = "data/reef_passages/new_caledonia.geojson";
+
 var urltransectmoorea = "data/data_for_transects/transects_moorea.geojson";
-var pathtopics = "media/webmap/transects/";
+var urltransecttahiti = "data/data_for_transects/transects_tahiti.geojson";
+
+var pathtotransects = "media/webmap/transects/";
+var pathtopics = "media/webmap/pictures/";
 
 if(page == "mobile-page"){
     console.log("Page détectée :", page);
     dotsize = 15;
-    // Relative path to geojson files from son 1 folders (html sheets other than index)
+    // Relative path to geojson files from son 1 folders (html sheets other than "index")
     urlfp = "../data/reef_passages/french_polynesia.geojson";
     urlf = "../data/reef_passages/PassesFiji.geojson";
     urlnc = "../data/reef_passages/new_caledonia.geojson";
+
     urltransectmoorea = "../data/data_for_transects/transects_moorea.geojson";
-    pathtopics = "../media/webmap/transects/";
+    urltransecttahiti = "../data/data_for_transects/transects_tahiti.geojson";
+
+    pathtotransects = "../media/webmap/transects/";
+    pathtopics = "media/webmap/pictures/";
 }
 
 function getColor(d) {
@@ -213,6 +222,24 @@ var layer_moorea_transects = new ol.layer.Vector({
 // Set name to refer to it later
 layer_moorea_transects.set('name', 'mooreatransects');
 
+// ----- Tahiti Transects
+
+var source_tahiti_transects = new ol.source.Vector({
+    format : new ol.format.GeoJSON(),
+    url : urltransecttahiti
+});
+
+source_tahiti_transects._title = "Transects: Tahiti";
+source_tahiti_transects._description = "Transects over Tahiti (French Polynesia)";
+
+var layer_tahiti_transects = new ol.layer.Vector({
+    source : source_tahiti_transects,
+    style : transectStyle,
+    visible : false
+});
+// Set name to refer to it later
+layer_tahiti_transects.set('name', 'tahititransects');
+
 
 
 // -----------------------------------
@@ -376,7 +403,7 @@ function after_init_map(){
             if (allowedLayers.includes(layerName)) {
                 console.log(layerName);
     
-                const imagePath = `${pathtopics}${feature.get('ID')}_transect.png`;
+                const imagePath = `${pathtotransects}${feature.get('ID')}_transect.png`;
                 content = `
                     <div class="layer-content">
 
@@ -487,6 +514,7 @@ function after_init_map(){
     map.addLayer(bglayer_osm);
     map.addLayer(bglayer_op);
     map.addLayer(layer_moorea_transects);
+    map.addLayer(layer_tahiti_transects);
     map.addLayer(labelLayer);
     map.addLayer(layer_fp);
     map.addLayer(layer_fiji);
